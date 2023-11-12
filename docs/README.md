@@ -26,6 +26,19 @@
     - [x] 총 혜택 금액이 1만원 이상 2만원 미만일 때 검증 - GrantBadge#validateTree()
     - [x] 총 혜택 금액이 2만원 이상일 때 배지 부여 - GrantBadge#grantBadgeOn20000()
     - [x] 총 혜택 금액이 2만원 이상일 때 검증 - GrantBadge#validateSanta()
+- [] 고객 주문
+    - [] 방문 날짜 입력 - InputView#visitToDate()
+    - [] 주문할 메뉴와 개수 입력 - InputView#orderToMenuAndNumber()
+    - [] 주문 메뉴 열거형 상수 - MenuEnum
+    - [] 이벤트 플래너 열거형 상수 - EventPlanner
+- [] 주문 내역
+    - [] 주문 메뉴 출력 - OutputView#printOrderToMenu()
+    - [] 할인 전 총주문 금액 출력 - OutputView#printTotalOrderAmountBeforeDiscount()
+    - [] 증정 메뉴 출력 - OutputView#printGiftToMenu()
+    - [] 혜택 내역 출력 - OutputView#printDiscountDetails()
+    - [] 총 혜택 금액 출력 - OutputView#printTotalDiscount()
+    - [] 할인 후 예상 결제 금액 출력 - OutputView#printEstimatedAmountAfterDiscount()
+    - [] 12월 이벤트 배지 출력 - OutputView#printEventBadge()
 
 ## ♻️ 크리스마스 프로모션 기능 테스트 목록
 
