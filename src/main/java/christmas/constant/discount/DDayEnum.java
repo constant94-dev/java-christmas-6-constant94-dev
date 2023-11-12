@@ -1,4 +1,4 @@
-package christmas.constant;
+package christmas.constant.discount;
 
 public enum DDayEnum {
     DAY_FIRST("1", 1000),

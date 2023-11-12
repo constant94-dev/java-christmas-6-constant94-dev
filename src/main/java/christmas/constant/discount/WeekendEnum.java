@@ -1,4 +1,4 @@
-package christmas.constant;
+package christmas.constant.discount;
 
 public enum WeekendEnum {
     DAY_FIRST("1", 2023),

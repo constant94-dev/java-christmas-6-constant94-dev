@@ -1,4 +1,4 @@
-package christmas.constant;
+package christmas.constant.discount;
 
 public enum GiftEnum {
     GIFT_EVENT(120000, 1),

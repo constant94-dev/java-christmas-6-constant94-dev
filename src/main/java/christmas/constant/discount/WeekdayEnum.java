@@ -1,4 +1,4 @@
-package christmas.constant;
+package christmas.constant.discount;
 
 public enum WeekdayEnum {
     DAY_THIRD("3", 2023),
