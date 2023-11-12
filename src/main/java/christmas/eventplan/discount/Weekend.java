@@ -7,7 +7,7 @@ public class Weekend {
 
     public int discountOnMainMenu(String currentDate) {
         WeekendEnum weekend = Arrays.stream(WeekendEnum.values())
-                .filter(d -> d.getDay().equals(currentDate))
+                .filter(we -> we.getDay().equals(currentDate))
                 .findFirst()
                 .orElse(WeekendEnum.DAY_NOT_EXIST);
 
