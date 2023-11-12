@@ -18,10 +18,14 @@
 - [] 증정 이벤트
     - [x] 할인 전 금액 12만원 이상일 때 샴페인 증정 - Gift#giftOnChampagne()
     - [x] 증정 이벤트 금액 열거형 상수 - GiftEnum
-- [] 이벤트 배지 부여
-    - [] 총 혜택 금액이 5천원 이상일 때 별 배지 부여 - Star#grantBadgeOn5000()
-    - [] 총 혜택 금액이 1만원 이상일 때 트리 배지 부여 - Tree#grantBadgeOn10000()
-    - [] 총 혜택 금액이 2만원 이상일 때 산타 배지 부여 - Santa#grantBadgeOn20000()
+- [x] 이벤트 배지 부여 - GrantBadge#grantToBadge()
+    - [x] 총 혜택 금액이 5천원 미만일 때 검증 - GrantBadge#validateNotBadge()
+    - [x] 총 혜택 금액이 5천원 이상일 때 배지 부여 - GrantBadge#grantBadgeOn5000()
+    - [x] 총 혜택 금액이 5천원 이상 1만원 미만일 떼 검증 - GrantBadge#validateStar()
+    - [x] 총 혜택 금액이 1만원 이상일 때 배지 부여 - GrantBadge#grantBadgeOn10000()
+    - [x] 총 혜택 금액이 1만원 이상 2만원 미만일 때 검증 - GrantBadge#validateTree()
+    - [x] 총 혜택 금액이 2만원 이상일 때 배지 부여 - GrantBadge#grantBadgeOn20000()
+    - [x] 총 혜택 금액이 2만원 이상일 때 검증 - GrantBadge#validateSanta()
 
 ## ♻️ 크리스마스 프로모션 기능 테스트 목록
 
@@ -40,3 +44,5 @@
 - [] 증정 이벤트
     - [x] 할인 전 총 주문 금액이 12만원 이상일 때, 샴페인 증정 확인 - GiftTest#giftOnChampagne()
     - [x] 할인 전 총 주문 금액이 12만원 이하일 때, 샴페인 증정 안함 - GiftTest#giftNotHaveChampagne()
+- [] 이벤트 배지
+    - [x] 총 혜택 금액에 따라서 이벤트 배지 부여 - EventBadgeTest#grantToBadge()
