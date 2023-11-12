@@ -1,6 +1,6 @@
 package christmas.eventplan.discount;
 
-import christmas.constant.SpecialEnum;
+import christmas.constant.discount.SpecialEnum;
 import java.util.Arrays;
 
 public class Special {

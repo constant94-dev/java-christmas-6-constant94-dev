@@ -1,6 +1,6 @@
 package christmas.eventplan.discount;
 
-import christmas.constant.DDayEnum;
+import christmas.constant.discount.DDayEnum;
 import java.util.Arrays;
 
 public class DDay {

@@ -2,7 +2,7 @@ package christmas.eventplan.discount;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import christmas.constant.SpecialEnum;
+import christmas.constant.discount.SpecialEnum;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;

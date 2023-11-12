@@ -1,6 +1,6 @@
 package christmas.eventplan.discount;
 
-import christmas.constant.WeekdayEnum;
+import christmas.constant.discount.WeekdayEnum;
 import java.util.Arrays;
 
 public class Weekday {
