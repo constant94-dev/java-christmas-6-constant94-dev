@@ -21,7 +21,7 @@ class DDayTest {
         assertThat(actual).isEqualTo(expected);
     }
 
-    @DisplayName("크리스마스 디데이 이벤트 기간에 해당하지 않는 경우 예외 발생")
+    @DisplayName("크리스마스 디데이 이벤트 기간에 해당하지 않는 경우 할인 안됨")
     @ParameterizedTest
     @ValueSource(strings = {"0", "26", "27", "28", "29", "30", "31"})
     void discountOnOrderNotInDate(String currentDate) {

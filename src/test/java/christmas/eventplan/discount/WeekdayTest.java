@@ -21,7 +21,7 @@ class WeekdayTest {
         assertThat(actual).isEqualTo(expected);
     }
 
-    @DisplayName("평일 이벤트 기간에 해당하지 않는 경우 예외 발생")
+    @DisplayName("평일 이벤트 기간에 해당하지 않는 경우 할인 안됨")
     @ParameterizedTest
     @ValueSource(strings = {"1", "2", "8", "9", "15", "16", "22", "23", "29", "30"})
     void discountOnOrderNotInWeekday(String currentDate) {

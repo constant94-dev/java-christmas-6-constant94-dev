@@ -21,7 +21,7 @@ class GiftTest {
         assertThat(actual).isEqualTo(expected);
     }
 
-    @DisplayName("할인 전 총 주문 금액이 12만원 이하일 때, 예외 발생")
+    @DisplayName("할인 전 총 주문 금액이 12만원 이하일 때, 샴페인 증정 안함")
     @ParameterizedTest
     @ValueSource(ints = {110000, 100000, 20000, 10000})
     void giftNotHaveChampagne(int totalAmount) {

@@ -22,7 +22,7 @@ class WeekendTest {
         assertThat(actual).isEqualTo(expected);
     }
 
-    @DisplayName("주말 이벤트 기간에 해당하지 않는 경우 예외 발생")
+    @DisplayName("주말 이벤트 기간에 해당하지 않는 경우 할인 안됨")
     @ParameterizedTest
     @ValueSource(strings = {"3", "4", "5", "6", "7", "10", "11", "12", "13", "14", "17", "18", "19", "20", "21", "24",
             "25", "26", "27", "28", "31"})
