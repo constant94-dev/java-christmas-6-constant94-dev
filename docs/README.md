@@ -3,6 +3,8 @@
 ## 🎄 크리스마스 프로모션 기능 목록
 
 - [] 크리스마스 프로모션 기능 출발지 - ChristmasPromotion#run()
+    - [] 프로모션 객체 준비 - ChristmasPromotion#ready()
+    - [] 프로모션 기능 시작 - ChristmasPromotion#promotionPlay()
 - [] 크리스마스 디데이 할인
     - [x] 디데이 할인 일자에 맞는 금액 할인 - DDay#discountOnTotalOrderAmount()
     - [x] 디데이 할인 날짜 및 할인 금액 열거형 상수 - DDayEnum
@@ -27,10 +29,33 @@
     - [x] 총 혜택 금액이 2만원 이상일 때 배지 부여 - GrantBadge#grantBadgeOn20000()
     - [x] 총 혜택 금액이 2만원 이상일 때 검증 - GrantBadge#validateSanta()
 - [] 고객 주문
-    - [] 방문 날짜 입력 - InputView#visitToDate()
-    - [] 주문할 메뉴와 개수 입력 - InputView#orderToMenuAndNumber()
-    - [] 주문 메뉴 열거형 상수 - MenuEnum
-    - [] 이벤트 플래너 열거형 상수 - EventPlanner
+    - [x] 이벤트 플래너 입장 - InputView#helloWooTeco()
+    - [x] 방문 날짜 입력 - InputView#visitToDate()
+        - [x] 방문 날짜 검증 - InputViewValidator#validateMore1AndLess31()
+        - [x] 1 이상 31 이하 검증 - InputViewValidator#validateMatchesVisitDate()
+    - [x] 주문할 메뉴와 개수 입력 - InputView#orderToMenuAndCount()
+        - [x] 주문 메뉴 검증 - InputViewValidator#validateMenuToExist()
+        - [x] 문자열 콤마(,) 기준 분할 - Ordered#splitOrderByComma()
+        - [x] 문자열 대쉬(-) 기준 분할 - Ordered#splitOrderByDash()
+        - [x] 문자열 공백 제거 - Ordered#removeSpace()
+        - [x] 주문 메뉴 생성 - Ordered#createMenuOrders()
+        - [x] 메뉴 이름 확인 - Ordered#isName()
+            - [x] 주문 메뉴 이름 추가 - Ordered#addOrderMenuName()
+            - [x] 메뉴 이름 검증 - OrderValidator#validateMatchesOrderName()
+            - [x] 유효한 이름 확인 - OrderValidator#isValidToName()
+            - [x] 중복되는 메뉴 이름 검증 - OrderValidator#validateDuplicateName()
+            - [x] 음료만 주문했는지 검증 - OrderValidator#validateOnlyDrink()
+        - [x] 메뉴 개수 확인 - Ordered#isCount()
+            - [x] 주문 메뉴 개수 추가 - Ordered#addOrderMenuCount()
+            - [x] 메뉴 개수 검증 - OrderValidator#validateMatchesOrderCount()
+            - [x] 유효한 개수 확인 - OrderValidator#isValidCount
+            - [x] 주문한 총 수량이 20개가 넘는지 검증 - OrderValidator#validateMaxCount20()
+        - [x] 고객 주문 정보 추가 - Ordered#addUserInfo()
+    - [x] 주문 반복을 위한 열거형 상수 - Flag
+    - [x] 음식 메뉴와 가격 열거형 상수 - Menu
+    - [x] 이벤트 플래너 열거형 상수 - EventPlanner
+    - [x] 주문 관련 예외 문구 열거형 상수 - ExceptionMessage
+    - [x] 최소, 최대 주문 수 열거형 상수 - MenuCount
 - [] 주문 내역
     - [] 주문 메뉴 출력 - OutputView#printOrderToMenu()
     - [] 할인 전 총주문 금액 출력 - OutputView#printTotalOrderAmountBeforeDiscount()
@@ -39,6 +64,24 @@
     - [] 총 혜택 금액 출력 - OutputView#printTotalDiscount()
     - [] 할인 후 예상 결제 금액 출력 - OutputView#printEstimatedAmountAfterDiscount()
     - [] 12월 이벤트 배지 출력 - OutputView#printEventBadge()
+- [] 예외 메시지 핸들러
+    - [x] 1 이상 31 이하 숫자 아닐 때, 예외 발생 - MessageHandler#more1AndLess31()
+    - [x] 중복되는 메뉴일 때, 예외 발생 - MessageHandler#duplicateToMenu()
+    - [x] 콤마(,)가 존재하지 않을 때, 예외 발생 - MessageHandler#notExistComma()
+    - [x] 대쉬(-)가 존재하지 않을 때, 예외 발생 - MessageHandler#notExistDash()
+    - [x] 유효하지 않은 이름일 때, 예외 발생 - MessageHandler#invalidToName()
+    - [x] 유효하지 않은 개수일 때, 예외 발생 - MessageHandler#invalidToCount()
+    - [x] 음료만 주문했을 때, 예외 발생 - MessageHandler#notOnlyDrink()
+    - [x] 주문 가능한 최대 수를 초과할 때, 예외 발생 - MessageHandler#limitOfMenuCount()
+- [] 고객 주문 정보
+    - [x] 메뉴 이름 추가 - OrderInfo#addMenuName()
+    - [x] 메뉴 수 추가 - OrderInfo#addMenuCount()
+    - [x] 메뉴 이름 리스트 가져오기 - OrderInfo#getNames()
+    - [x] 메뉴 수 리스트 가져오기 - OrderInfo#getCounts()
+    - [x] 주문 메뉴 이름 크기 가져오기 - OrderInfo#getNameSize()
+    - [x] 주문 메뉴 중 음료 목록 제거 - OrderInfo#removeToDrink()
+    - [x] 주문 메뉴 총합 - OrderInfo#maxToCount()
+    - [x] 주문 메뉴 이름 중복 수 - OrderInfo#duplicateName()
 
 ## ♻️ 크리스마스 프로모션 기능 테스트 목록
 
