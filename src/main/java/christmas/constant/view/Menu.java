@@ -1,6 +1,6 @@
 package christmas.constant.view;
 
-public enum MenuEnum {
+public enum Menu {
     APPETIZER_SOUP("양송이수프", 6000),
     APPETIZER_TAPAS("타파스", 5500),
     APPETIZER_SALAD("시저샐러드", 8000),
@@ -18,7 +18,7 @@ public enum MenuEnum {
     private String menu;
     private int price;
 
-    MenuEnum(String menu, int price) {
+    Menu(String menu, int price) {
         this.menu = menu;
         this.price = price;
     }
