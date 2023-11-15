@@ -13,6 +13,7 @@ public enum Menu {
     DRINK_COKE("제로콜라", 3000),
     DRINK_WINE("레드와인", 60000),
     DRINK_CHAMPAGNE("샴페인", 25000),
+    ONLY_TO_DRINK("음료만주문", 0),
     NOT_EXIST_MENU("없음", 0);
 
     private String menu;

@@ -10,6 +10,11 @@ public enum EventPlanner {
     PLANNER_AFTER_DISCOUNT("<할인 후 예상 결제 금액>"),
     PLANNER_GIFT_MENU("<증정 메뉴>"),
     PLANNER_DISCOUNT("<혜택 내역>"),
+    PLANNER_DISCOUNT_DDAY("크리스마스 디데이 할인"),
+    PLANNER_DISCOUNT_WEEKDAY("평일 할인"),
+    PLANNER_DISCOUNT_WEEKEND("주말 할인"),
+    PLANNER_DISCOUNT_SPECIAL("특별 할인"),
+    PLANNER_DISCOUNT_GIFT("증정 이벤트"),
     PLANNER_TOTAL_DISCOUNT("<총혜택 금액>"),
     PLANNER_EVENT_BADGE("<12월 이벤트 배지>");
 
