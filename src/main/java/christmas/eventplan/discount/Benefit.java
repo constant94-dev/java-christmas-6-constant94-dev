@@ -236,13 +236,13 @@ public class Benefit {
         int totalAmount = 0;
 
         for (Entry<String, Integer> menu : menus) {
-            totalAmount += hasTotalOrderAmount(menu, totalAmount);
+            totalAmount += hasTotalOrderAmount(menu);
         }
 
         return totalAmount;
     }
 
-    private int hasTotalOrderAmount(Entry<String, Integer> menu, int totalAmount) {
+    private int hasTotalOrderAmount(Entry<String, Integer> menu) {
         Menu menuEnum = Arrays.stream(Menu.values())
                 .filter(m -> m.getMenu().equals(menu.getKey()))
                 .findFirst()
