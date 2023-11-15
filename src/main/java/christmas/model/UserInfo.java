@@ -1,17 +1,15 @@
 package christmas.model;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class UserInfo {
-    private String visitDate;
+    private String visitDate = "";
 
-    private Map<String, Integer> eventDetails;
-    private Map<String, Integer> menuOrders;
+    private Map<String, Integer> eventDetails = new HashMap<>();
+    private Map<String, Integer> menuOrders = new HashMap<>();
 
-    public UserInfo(Map<String, Integer> menuOrders, Map<String, Integer> eventDetails, String visitDate) {
-        this.menuOrders = menuOrders;
-        this.eventDetails = eventDetails;
-        this.visitDate = visitDate;
+    public UserInfo() {
     }
 
     public String getVisitDate() {
@@ -26,13 +24,20 @@ public class UserInfo {
         return eventDetails;
     }
 
+    public Integer getEventDetail(String key) {
+        return eventDetails.get(key);
+    }
+
     public void changeVisitDate(String visitDate) {
         this.visitDate = visitDate;
     }
 
     public void addMenuOrder(String menuName, int menuCount) {
-        this.menuOrders.put(menuName, menuCount);
+        menuOrders.put(menuName, menuCount);
     }
 
+    public void addEventDetail(String title, int eventResult) {
+        eventDetails.put(title, eventResult);
+    }
 
 }

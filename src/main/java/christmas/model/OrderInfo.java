@@ -1,14 +1,18 @@
 package christmas.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrderInfo {
-    private List<String> names;
-    private List<Integer> counts;
+    private List<String> names = new ArrayList<>();
+    private List<Integer> counts = new ArrayList<>();
+    private List<String> splitMenus = new ArrayList<>();
 
-    public OrderInfo(List<String> names, List<Integer> counts) {
-        this.names = names;
-        this.counts = counts;
+    public OrderInfo() {
+    }
+
+    public void addSplitMenus(String splitMenu) {
+        splitMenus.add(splitMenu);
     }
 
     public void addMenuName(String name) {
@@ -17,6 +21,10 @@ public class OrderInfo {
 
     public void addMenuCount(int count) {
         counts.add(count);
+    }
+
+    public List<String> getSplitMenus() {
+        return splitMenus;
     }
 
     public List<String> getNames() {
@@ -31,11 +39,19 @@ public class OrderInfo {
         return names.size();
     }
 
-    public List<String> removeToDrink(List<String> drink) {
-        return names.stream()
-                .distinct()
-                .filter(n -> !drink.contains(n))
-                .toList();
+    public long removeToDrink(List<String> drink) {
+        if (!isOrderEmpty()) {
+            return names.stream()
+                    .distinct()
+                    .filter(n -> !drink.contains(n))
+                    .count();
+        }
+
+        return 1;
+    }
+
+    private boolean isOrderEmpty() {
+        return (getNameSize() == 0);
     }
 
     public int maxToCount() {
