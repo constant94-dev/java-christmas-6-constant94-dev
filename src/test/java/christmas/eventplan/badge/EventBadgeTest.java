@@ -12,7 +12,7 @@ class EventBadgeTest {
     @ParameterizedTest
     @CsvSource(value = {"5000,별", "9000,별", "10000,트리", "19000,트리", "20000,산타", "30000,산타", "4000,없음", "1000,없음"})
     void grantToBadge(int totalBenefitAmount, String expected) {
-        EventBadge eventBadge = new EventBadge(totalBenefitAmount);
+        EventBadge eventBadge = new EventBadge();
 
         String actual = eventBadge.grantToBadge(totalBenefitAmount);
 

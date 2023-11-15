@@ -12,14 +12,8 @@ import static christmas.constant.badge.TreeEnum.BADGE_TREE_MIN;
 
 public class EventBadge {
 
-    private int totalBenefitAmount;
-
     private String badgeStatus;
 
-    EventBadge(int totalBenefitAmount) {
-        this.totalBenefitAmount = totalBenefitAmount;
-        this.badgeStatus = grantToBadge(totalBenefitAmount);
-    }
 
     public String grantToBadge(int totalBenefit) {
         if (validateNotBadge(totalBenefit)) {
@@ -63,5 +57,14 @@ public class EventBadge {
 
     private boolean validateSanta(int totalBenefit) {
         return BADGE_SANTA_MIN.getTotalBenefit() <= totalBenefit;
+    }
+
+    public void changeBadgeStatus(String badgeStatus) {
+        this.badgeStatus = badgeStatus;
+
+    }
+
+    public String getBadgeStatus() {
+        return badgeStatus;
     }
 }
