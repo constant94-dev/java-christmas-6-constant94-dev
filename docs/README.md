@@ -156,7 +156,9 @@
     - [x] 할인 전 총 주문 금액이 12만원 이하일 때, 샴페인 증정 안함 - GiftTest#giftNotHaveChampagne()
 - [] 이벤트 배지
     - [x] 총 혜택 금액에 따라서 이벤트 배지 부여 - EventBadgeTest#grantToBadge()
-- [] 입력 기능 테스트
+- [x] 입력 기능 테스트
+    - [x] 우테코 식당 입장할 때 통과 문구 - InputViewTest#helloWooTecoSuccess()
+    - [x] 우테코 식당 입장할 때 실패 문구 - InputViewTest#helloWooTecoFailure()
 - [] 출력 기능 테스트
 - [] 입력 검증 유틸 테스트
 - [] 출력 검증 유틸 테스트
