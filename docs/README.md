@@ -103,8 +103,18 @@
     - [x] 주문 메뉴 출력 - OutputView#printOrderToMenu()
     - [x] 할인 전 총주문 금액 출력 - OutputView#printTotalOrderAmountBeforeDiscount()
     - [x] 증정 메뉴 출력 - OutputView#printGiftToMenu()
+        - [x] 증정 이벤트 검증 - OutputViewValidator#validateGift()
+        - [x] 증정 메뉴 존재 여부 - OutputViewValidator#isGift()
     - [x] 혜택 내역 출력 - OutputView#printDiscountDetails()
+        - [x] 전체 혜택 내역 검증 - OutputViewValidator#validateDiscount()
+        - [x] 혜택 내역 존재 여부 - OutputViewValidator#notInBenefit()
+        - [x] 디데이 할인 여부 - OutputViewValidator#haveDiscountDDay()
+        - [x] 평일 할인 여부 - OutputViewValidator#haveDiscountWeekday()
+        - [x] 주말 할인 여부 - OutputViewValidator#haveDiscountWeekend()
+        - [x] 특별 할인 여부 - OutputViewValidator#haveDiscountSpecial()
+        - [x] 증정 이벤트 여부 - OutputViewValidator#haveDiscountGift()
     - [x] 총 혜택 금액 출력 - OutputView#printTotalDiscount()
+        - [x] 총 혜택 금액 검증 - OutputViewValidator#validateTotalDiscount()
     - [x] 할인 후 예상 결제 금액 출력 - OutputView#printEstimatedAmountAfterDiscount()
     - [x] 12월 이벤트 배지 출력 - OutputView#printEventBadge()
 - [x] 예외 메시지 핸들러
@@ -139,23 +149,30 @@
 
 ## ♻️ 크리스마스 프로모션 기능 테스트 목록
 
-- [] 크리스마스 디데이 할인
-    - [x] 크리스마스 디데이 이벤트 기간에 맞는 할인 금액 확인 - DDayTest#discountOnTotalOrderAmount()
-    - [x] 크리스마스 디데이 이벤트 기간에 해당하지 않는 경우 할인 안됨 - DDayTest#discountOnOrderNotInDate()
-- [] 평일 할인
-    - [x] 평일 이벤트 기간에 맞는 할인 금액 확인 - WeekdayTest#discountOnDessertMenu()
+- [x] 크리스마스 디데이 할인
+    - [x] 크리스마스 디데이 이벤트 기간에 맞는 할인 금액 확인 - DDayTest#discountOnDDayInDate()
+    - [x] 크리스마스 디데이 이벤트 기간에 해당하지 않는 경우 할인 안됨 - DDayTest#discountOnDDayNotInDate()
+- [x] 평일 할인
+    - [x] 평일 이벤트 기간에 맞는 할인 금액 확인 - WeekdayTest#discountOnWeekday()
     - [x] 평일 이벤트 기간에 해당하지 않는 경우 할인 안됨 - WeekdayTest#discountOnOrderNotInWeekday()
-- [] 주말 할인
-    - [x] 주말 이벤트 기간에 맞는 할인 금액 확인 - WeekendTest#discountOnMainMenu()
+    - [x] 평일 이벤트 기간에 해당할 때 디저트 메뉴 할인 가격 확인 - WeekdayTest#discountOnDessertMenu()
+- [x] 주말 할인
+    - [x] 주말 이벤트 기간에 맞는 할인 금액 확인 - WeekendTest#discountOnOrderInWeekend()
     - [x] 주말 이벤트 기간에 해당하지 않는 경우 할인 안됨 - WeekendTest#discountOnOrderNotInWeekend()
-- [] 특별 할인
+    - [x] 주말 이벤트 기간에 해당할 때 메인 메뉴 할인 개수 확인 - WeekendTest#discountOnMainMenu()
+- [x] 특별 할인
     - [x] 특별 이벤트 기간에 맞는 할인 금액 확인 - SpecialTest#discountOnStarBadge()
     - [x] 특별 이벤트 기간에 해당하지 않는 경우 할인 안됨 - Special#discountOnCalendarNotHaveStar()
-- [] 증정 이벤트
+- [x] 증정 이벤트
     - [x] 할인 전 총 주문 금액이 12만원 이상일 때, 샴페인 증정 확인 - GiftTest#giftOnChampagne()
     - [x] 할인 전 총 주문 금액이 12만원 이하일 때, 샴페인 증정 안함 - GiftTest#giftNotHaveChampagne()
-- [] 이벤트 배지
+- [x] 이벤트 배지
     - [x] 총 혜택 금액에 따라서 이벤트 배지 부여 - EventBadgeTest#grantToBadge()
+- [x] 혜택 관련 처리
+    - [x] 이벤트 혜택을 생성할 때 할인 전 총주문 금액을 확인 - BenefitTest#createEventBenefit()
+    - [x] 이벤트로 발생한 총 혜택 금액을 확인 - BenefitTest#createTotalBenefitAmount()
+    - [x] 이벤트로 발생한 총 혜택 금액에 따라서 배지 부여 확인 - BenefitTest#createEventBadge()
+    - [x] 할인 전 총주문 금액에서 할인 금액을 제외한 할인 후 예상 결제 금액 확인 - BenefitTest#createDiscountTotalAmount()
 - [x] 입력 기능 테스트
     - [x] 우테코 식당 입장할 때 통과 문구 - InputViewTest#helloWooTecoSuccess()
     - [x] 우테코 식당 입장할 때 실패 문구 - InputViewTest#helloWooTecoFailure()
@@ -168,7 +185,30 @@
     - [x] 총 혜택 내역 출력 확인- OutputView#printTotalDiscount()
     - [x] 할인 후 예상 결제 금액 확인 - OutputView#printEstimatedAmountAfterDiscount()
     - [x] 12월 이벤트 배지 확인 - OutputView#printEventBadge()
-- [] 입력 검증 유틸 테스트
-- [] 출력 검증 유틸 테스트
-- [] 주문 내역 유틸 테스트
-- [] 주문 내역 검증 유틸 테스트
+- [x] 입력 검증 유틸 테스트
+    - [x] 1 이상 31 이하의 숫자가 맞는 경우, 통과 - InputViewValidatorTest#validateMore1AndLess31Success()
+    - [x] 1 이상 31 이하의 숫자가 아닌 경우, 예외 발생 - InputViewValidatorTest#validateMore1AndLess31Failure()
+    - [x] 문자열 콤마(,)와 대쉬(-)를 기준으로 분할한 값을 확인 - InputViewValidatorTest#validateMenuToSplit()
+    - [x] 문자열 분할한 길이가 1보다 클때 콤마(,) 또는 대쉬(-)가 존재하지 않는 경우 예외 발생 - InputViewValidatorTest#validateMenuToNotSplit()
+- [x] 출력 검증 유틸 테스트
+    - [x] 증정 메뉴가 있을 때와 없을 때 출력 확인 - OutputViewValidatorTest#validateGiftToExist()
+    - [x] 고객 혜택 전체 내역 출력 확인 - OutputViewValidatorTest#validateDiscountTotal()
+    - [x] 고객 혜택 없을 때 출력 확인 - OutputViewValidatorTest#validateNoDiscountTotal()
+    - [x] 총 혜택 금액에 따라서 달라지는 출력 확인 - OutputViewValidatorTest#validateTotalDiscountForm()
+- [x] 주문 내역 유틸 테스트
+    - [x] 고객 주문 관련 검증이 성공했을 때 통과 - OrderedTest#createMenuOrdersSuccess()
+    - [x] 고객 주문 관련 검증이 실패했을 때 예외 발생 - OrderedTest#createMenuOrdersFailure()
+    - [x] 고객 주문 관련 검증 후 최종 내역 저장되면 통과 - OrderedTest#createUserInfoSuccess()
+- [x] 주문 내역 검증 유틸 테스트
+    - [x] 주문한 메뉴 이름이 유효할 때 통과 - OrderedValidatorTest#validateMatchesOrderNameIsValidToName()
+    - [x] 주문한 메뉴 이름이 유효하지 않을 때 예외 발생 - OrderedValidatorTest#validateOrderNameIsInvalidToName()
+    - [x] 주문한 개수가 유효할 때 통과 - OrderedValidatorTest#validateMatchesOrderCountIsValidCount()
+    - [x] 주문한 개수가 유효하지 않을 때 예외 발생 - OrderedValidatorTest#validateMatchesOrderCountIsInvalidCount()
+    - [x] 음료만 주문하지 않았을 때 통과 - OrderedValidatorTest#validateOrderNotOnlyDrink()
+    - [x] 음료만 주문했을 때 예외 발생 - OrderedValidatorTest#validateOrderOnlyDrink()
+    - [x] 주문한 총 개수가 20개 이하일 때 통과 - OrderedValidatorTest#validateMaxCountLess20()
+    - [x] 주문한 총 개수가 20개 초과일 때 예외 발생 - OrderedValidatorTest#validateMaxCountMore20()
+    - [x] 주문 메뉴 이름 중 중복된 메뉴가 없을 때 통과 - OrderedValidatorTest#validateNotDuplicateName()
+    - [x] 주문 메뉴 이름 중 중복된 메뉴가 있을 때 예외 발생 - OrderedValidatorTest3validateDuplicateToName()
+    - [x] 주문 메뉴 이름과 개수 검증이 문제 없을 때 통과 - OrderedValidatorTest#validateCountOrNameSuccess()
+    - [x] 주문 메뉴 이름과 개수 검증이 문제 있을 때 실패 - OrderedValidatorTest#validateCountOrNameFailure()
