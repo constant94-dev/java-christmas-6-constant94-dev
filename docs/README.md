@@ -159,7 +159,15 @@
 - [x] 입력 기능 테스트
     - [x] 우테코 식당 입장할 때 통과 문구 - InputViewTest#helloWooTecoSuccess()
     - [x] 우테코 식당 입장할 때 실패 문구 - InputViewTest#helloWooTecoFailure()
-- [] 출력 기능 테스트
+- [x] 출력 기능 테스트
+    - [x] 고객이 입력한 예상 방문 날짜 출력 확인 - OutputView#printWooTecoEventPreview()
+    - [x] 고객이 주문한 메뉴 출력 확인 - OutputView#printOrderToMenu()
+    - [x] 할인 전 총주문 금액 출력 확인 - OutputView#printTotalOrderAmountBeforeDiscount()
+    - [x] 증정 메뉴 출력 확인 - OutputView#printGiftToMenu()
+    - [x] 혜택 내역 출력 확인 - OutputView#printDiscountDetails()
+    - [x] 총 혜택 내역 출력 확인- OutputView#printTotalDiscount()
+    - [x] 할인 후 예상 결제 금액 확인 - OutputView#printEstimatedAmountAfterDiscount()
+    - [x] 12월 이벤트 배지 확인 - OutputView#printEventBadge()
 - [] 입력 검증 유틸 테스트
 - [] 출력 검증 유틸 테스트
 - [] 주문 내역 유틸 테스트
