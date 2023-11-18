@@ -45,16 +45,14 @@ public final class OutputViewValidator {
     }
 
     public static String validateDiscount(Map<String, Integer> eventDetails) {
-        StringBuilder result = new StringBuilder();
 
-        result
-                .append(haveDiscountDDay(eventDetails))
-                .append(haveDiscountWeekday(eventDetails))
-                .append(haveDiscountWeekend(eventDetails))
-                .append(haveDiscountSpecial(eventDetails))
-                .append(haveDiscountGift(eventDetails));
+        String printTogether = haveDiscountDDay(eventDetails)
+                + haveDiscountWeekday(eventDetails)
+                + haveDiscountWeekend(eventDetails)
+                + haveDiscountSpecial(eventDetails)
+                + haveDiscountGift(eventDetails);
 
-        return notInBenefit(result.toString());
+        return notInBenefit(printTogether);
     }
 
     private static String notInBenefit(String result) {
