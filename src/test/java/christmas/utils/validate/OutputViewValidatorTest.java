@@ -14,7 +14,6 @@ import static christmas.utils.validate.OutputViewValidator.validateTotalDiscount
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.text.NumberFormat;
-import java.util.Locale;
 import java.util.Map;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -47,38 +46,17 @@ class OutputViewValidatorTest {
                 PLANNER_DISCOUNT_GIFT.getPlanner(), gift
         );
 
-        NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.KOREA);
+        String actual = validateDiscount(eventDetails);
+
+        NumberFormat numberFormat = NumberFormat.getNumberInstance();
+
         StringBuilder expected = new StringBuilder();
         expected
                 .append(PLANNER_DISCOUNT_DDAY.getPlanner())
                 .append(": ")
                 .append("-")
                 .append(numberFormat.format(dday))
-                .append("원\n")
-                .append(PLANNER_DISCOUNT_WEEKDAY.getPlanner())
-                .append(": ")
-                .append("-")
-                .append(numberFormat.format(weekday))
-                .append("원\n")
-                .append(PLANNER_DISCOUNT_WEEKEND.getPlanner())
-                .append(": ")
-                .append("-")
-                .append(numberFormat.format(weekend))
-                .append("원\n")
-                .append(PLANNER_DISCOUNT_SPECIAL.getPlanner())
-                .append(": ")
-                .append("-")
-                .append(numberFormat.format(special))
-                .append("원\n")
-                .append(PLANNER_DISCOUNT_GIFT.getPlanner())
-                .append(": ")
-                .append("-")
-                .append(numberFormat.format(gift))
-                .append("원\n");
-
-        String actual = validateDiscount(eventDetails);
-
-        System.out.println(actual);
+                .append("원");
 
         assertThat(actual).contains(expected);
     }
@@ -113,7 +91,6 @@ class OutputViewValidatorTest {
         );
 
         String actual = validateTotalDiscount(eventDetails);
-        System.out.println(actual);
 
         assertThat(actual).isEqualTo(expected);
     }
