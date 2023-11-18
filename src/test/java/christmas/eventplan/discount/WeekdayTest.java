@@ -15,7 +15,7 @@ class WeekdayTest {
     @DisplayName("평일 이벤트 기간에 맞는 할인 금액 확인")
     @ParameterizedTest
     @CsvSource(value = {"3,2023", "4,2023", "10,2023", "11,2023", "28,2023", "31,2023"})
-    void discountOnDessertMenu(String currentDate, int expected) {
+    void discountOnWeekday(String currentDate, int expected) {
         Weekday weekday = new Weekday();
 
         int actual = weekday.discountOnWeekday(currentDate);
@@ -37,7 +37,7 @@ class WeekdayTest {
     @DisplayName("평일 이벤트 기간에 해당할 때 디저트 메뉴 할인 가격 확인")
     @ParameterizedTest
     @ValueSource(ints = {12138})
-    void discountOnMainMenu(int expected) {
+    void discountOnDessertMenu(int expected) {
         Weekday weekend = new Weekday();
         UserInfo userInfo = new UserInfo();
         userInfo.changeVisitDate("3");

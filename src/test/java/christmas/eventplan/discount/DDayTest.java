@@ -13,10 +13,10 @@ class DDayTest {
     @DisplayName("크리스마스 디데이 이벤트 기간에 맞는 할인 금액 확인")
     @ParameterizedTest
     @CsvSource(value = {"1,1000", "2,1100", "3,1200", "24,3300", "25,3400"})
-    void discountOnTotalOrderAmount(String currentDate, int expected) {
+    void discountOnDDayInDate(String currentDate, int expected) {
         DDay dDay = new DDay();
 
-        int actual = dDay.discountOnTotalOrderAmount(currentDate);
+        int actual = dDay.discountOnDDay(currentDate);
 
         assertThat(actual).isEqualTo(expected);
     }
@@ -24,10 +24,10 @@ class DDayTest {
     @DisplayName("크리스마스 디데이 이벤트 기간에 해당하지 않는 경우 할인 안됨")
     @ParameterizedTest
     @ValueSource(strings = {"0", "26", "27", "28", "29", "30", "31"})
-    void discountOnOrderNotInDate(String currentDate) {
+    void discountOnDDayNotInDate(String currentDate) {
         DDay dDay = new DDay();
 
-        int actual = dDay.discountOnTotalOrderAmount(currentDate);
+        int actual = dDay.discountOnDDay(currentDate);
 
         assertThat(actual).isEqualTo(DDayEnum.DAY_NOT_EXIST.getDiscount());
     }
