@@ -146,7 +146,7 @@ public class Benefit {
     }
 
     private void createDdayDiscount(UserInfo userInfo) {
-        int dDayBenefit = dDay.discountOnTotalOrderAmount(userInfo.getVisitDate());
+        int dDayBenefit = dDay.discountOnDDay(userInfo.getVisitDate());
 
         isDdayNotInBenefit(userInfo, dDayBenefit);
     }

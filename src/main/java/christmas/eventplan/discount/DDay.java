@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class DDay {
 
-    public int discountOnTotalOrderAmount(String currentDate) {
+    public int discountOnDDay(String currentDate) {
         DDayEnum dDay = Arrays.stream(DDayEnum.values())
                 .filter(d -> d.getDay().equals(currentDate))
                 .findFirst()
